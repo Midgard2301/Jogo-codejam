@@ -33,12 +33,16 @@ estado_idle.inicia=function()
 
 estado_idle.roda=function()
 {
- 
  //se eu estiver em movimento 
- 
  if (up xor left or right xor down)
  {
 	troca_estado(estado_walk);
+ }
+ 
+ // condição de attack 
+ if (attack)
+ {
+ troca_estado(estado_attack);
  }
 }
 #endregion
@@ -59,8 +63,7 @@ estado_walk.inicia= function()
 
 
 estado_walk.roda = function() {
-	
-	
+		
 	dir=(point_direction(0, 0, velh, velv)div 90); 
     
 	//Ajustando o lado que ele olha 
@@ -69,22 +72,50 @@ estado_walk.roda = function() {
 		image_xscale=sign(velh);
 	}
 
-	
-	
-	
-	
 	sprite_index=definindo_sprite(dir, spr_player_walk_side,spr_player_walk_front, spr_player_walk_back);
     // Definindo a Sprite enquanto anda
-	velv	=(down-up)*vel;
+	velv=(down-up)*vel;
 		
-	velh= (right-left)*vel;
-    
+	velh=(right-left)*vel;
+	
     // Condição para sair
 	//se eu estou parado eu vou para o estado idle 
     if (velh == 0 && velv == 0) {
         troca_estado(estado_idle);
     }
+	
+	if(attack)
+	{
+		troca_estado(estado_attack)		
+	}
 }
+#endregion
+
+#region // estado attack
+estado_attack.inicia=function()
+{
+	
+	//ajustando o sprite  
+	sprite_index=definindo_sprite(dir, spr_player_attack_side,spr_player_attack_front, spr_player_attack_back)
+	
+	//garantindo que a animação começo no primeiro frame 
+	image_index=0;
+	
+	velh=0;
+	velv=0;
+}
+
+//saindo do estado attack
+
+estado_attack.roda=function()
+{	
+	//compara o número de imagens com a imagem de ataque 
+	if(image_index>=image_number-0.2)
+	{
+		troca_estado(estado_idle);	
+	}
+}
+
 #endregion
 
 #region // iniciando variáveis 
