@@ -6,7 +6,9 @@ window_set_size(640, 360);
 // Centraliza a janela na sua tela
 window_center();
 
+meu_dano=noone;
 
+#region // iniciando estados
 //iniciando primeiro estado 
 estado_idle= new estado();
 
@@ -15,7 +17,7 @@ estado_walk=new estado();
 
 //iniciando o estado de ataque 
 estado_attack = new estado();
-
+#endregion
 
 #region //estado idle
 //Meu estado _idle precissa de um inicio 
@@ -64,8 +66,16 @@ estado_walk.inicia= function()
 
 estado_walk.roda = function() {
 		
-	dir=(point_direction(0, 0, velh, velv)div 90); 
+	velv=(down-up)*vel;
+	velh=(right-left)*vel;
     
+	
+	if (velh == 0 && velv == 0) {
+        troca_estado(estado_idle);
+		return;
+    }
+	
+	dir = (point_direction(0, 0, velh, velv) div 90);
 	//Ajustando o lado que ele olha 
 	if (velh!=0)
 	{
@@ -74,15 +84,10 @@ estado_walk.roda = function() {
 
 	sprite_index=definindo_sprite(dir, spr_player_walk_side,spr_player_walk_front, spr_player_walk_back);
     // Definindo a Sprite enquanto anda
-	velv=(down-up)*vel;
-		
-	velh=(right-left)*vel;
+
 	
     // Condição para sair
 	//se eu estou parado eu vou para o estado idle 
-    if (velh == 0 && velv == 0) {
-        troca_estado(estado_idle);
-    }
 	
 	if(attack)
 	{
@@ -103,6 +108,17 @@ estado_attack.inicia=function()
 	
 	velh=0;
 	velv=0;
+	
+	
+	
+	
+	//Criando o dano 
+	var _x= x + lengthdir_x(16, dir*90);
+	var _y= y + lengthdir_y (16, dir*90);
+	
+	meu_dano=instance_create_depth(_x,_y, depth, obj_player_dano);
+	
+	
 }
 
 //saindo do estado attack
@@ -114,6 +130,11 @@ estado_attack.roda=function()
 	{
 		troca_estado(estado_idle);	
 	}
+}
+estado_attack.finaliza= function()
+{
+	//Encerro o meu dano 
+	instance_destroy(meu_dano); 
 }
 
 #endregion
@@ -140,7 +161,6 @@ vel=2;
 //controlando a direção que o player está olhando 
 dir =0;
 #endregion
-
 
 //inicia minha maquina de estados 
 inicia_estado(estado_idle);
