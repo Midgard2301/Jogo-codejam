@@ -1,4 +1,5 @@
 //Iniciar variáveis
+mask_index = spr_player_idle_front;
 
 // Define o tamanho da janela (Largura, Altura) em pixels
 window_set_size(640, 360);  
@@ -17,6 +18,9 @@ estado_walk=new estado();
 
 //iniciando o estado de ataque 
 estado_attack = new estado();
+
+//estado de tiro
+estado_tiro= new estado();
 #endregion
 
 #region //estado idle
@@ -45,6 +49,10 @@ estado_idle.roda=function()
  if (attack)
  {
  troca_estado(estado_attack);
+ }
+ 
+ if(tiro){
+ troca_estado(estado_tiro);
  }
 }
 #endregion
@@ -79,7 +87,14 @@ estado_walk.roda = function() {
 	//Ajustando o lado que ele olha 
 	if (velh!=0)
 	{
-		image_xscale=sign(velh);
+		var _novo_scale = sign(velh);
+		
+		// Se ele mudou de direção
+		if (image_xscale != _novo_scale) {
+			// Aplica o empurrão de 2 pixels para longe da parede ANTES de mudar a escala
+			x += _novo_scale * 2; 
+			image_xscale = _novo_scale;
+		}
 	}
 
 	sprite_index=definindo_sprite(dir, spr_player_walk_side,spr_player_walk_front, spr_player_walk_back);
@@ -116,7 +131,7 @@ estado_attack.inicia=function()
 	var _x= x + lengthdir_x(16, dir*90);
 	var _y= y + lengthdir_y (16, dir*90);
 	
-	meu_dano=instance_create_depth(_x,_y, depth, obj_player_dano);
+	meu_dano=instance_create_depth(_x,_y, depth, obj_dano);
 	
 	
 }
@@ -139,6 +154,44 @@ estado_attack.finaliza= function()
 
 #endregion
 
+#region // estado tiro
+	estado_tiro.inicia=function()
+	{
+	//ajustando o sprite  
+	sprite_index=definindo_sprite(dir, spr_player_attack_side,spr_player_attack_front, spr_player_attack_back)
+	
+	//garantindo que a animação começo no primeiro frame 
+	image_index=0;
+	
+	velh=0;
+	velv=0;	
+	
+	var _x=x+lengthdir_x(30, dir*90);
+	var _y=y+lengthdir_y(28, dir*90);
+	
+	var _tiro=instance_create_depth(_x,_y,depth+1, obj_tiro);
+			
+	// Define a direção exata para onde o tiro deve ir 
+	_tiro.direction = dir * 90;
+	
+	//definada a velocidade 
+	_tiro.speed=vel_tiro;
+
+	
+	}
+	
+	
+estado_tiro.roda=function()
+{	
+	//compara o número de imagens com a imagem de ataque 
+	if(image_index>=image_number-0.2)
+	{
+		troca_estado(estado_idle);	
+	}
+}
+	
+#endregion
+
 #region // iniciando variáveis 
 
 //Controles sendo iniciados sem valor 
@@ -148,6 +201,7 @@ down=noone;
 left=noone;
 right=noone;
 attack=noone;
+tiro=noone;
 //Variáveis de movimento
 //iniciando parado 
 
@@ -158,9 +212,14 @@ velv=0;
 //velocidade do jogador
 vel=2;
 
+//velocidade do tiro
+vel_tiro=3;
+
 //controlando a direção que o player está olhando 
 dir =0;
 #endregion
+
+
 
 //inicia minha maquina de estados 
 inicia_estado(estado_idle);

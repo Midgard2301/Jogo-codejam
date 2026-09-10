@@ -1,4 +1,4 @@
-var _lista=ds_list_create();
+var _lista=	ds_list_create();
 
 
 var _qtd=	instance_place_list(x, y, obj_inimigo_pai, _lista, false);

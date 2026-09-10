@@ -13,22 +13,19 @@ event_inherited();
 //tudo que eu esvrever a baixo desse código event_inherited(); é sobrescrito
 
 
-//estado persegue
-
-estado_hunt=new estado();
-
 #region //estado_idle
 estado_idle.inicia=function()
 {
 	//definindo a sprite
 	sprite_index=spr_slime_idle;
 	
+		
 	//iniciar animação no começo 
 	image_index=0;
 	
-	timer_estado=tempo_estado;
-	
 	image_blend=c_white;
+	
+	timer_estado=tempo_estado;
 	
 }
 
@@ -178,7 +175,8 @@ estado_hunt.inicia=function()
 	sprite_index=spr_slime_walk;
 	image_index=0;
 	
-	image_blend=c_yellow
+	image_blend=c_yellow;
+	
 	if(instance_exists(obj_player)	)
 	{
 		alvo=obj_player.id;
