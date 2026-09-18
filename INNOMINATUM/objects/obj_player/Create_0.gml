@@ -192,6 +192,26 @@ estado_tiro.roda=function()
 	
 #endregion
 
+#region //esado_death
+estado_death.inicia=function()
+{
+	//definindo a sprite
+	sprite_index=spr_player_death;
+	
+	//iniciar animação no começo 
+	image_index=0;
+}
+
+estado_death.roda=function()
+{
+	if(image_index>=image_number-.5)
+	{
+		instance_destroy();
+	}
+
+}
+#endregion
+
 #region // iniciando variáveis 
 
 //Controles sendo iniciados sem valor 
