@@ -6,7 +6,6 @@ right	=keyboard_check(vk_right) or keyboard_check(ord("D"));
 attack  =keyboard_check_pressed(vk_space) or keyboard_check(ord("J"));
 tiro	=keyboard_check(vk_tab)or keyboard_check(ord("L"));
 
-
 //ajustando minha profundidade 
 depth=-y;
 

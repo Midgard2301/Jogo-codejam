@@ -3,8 +3,7 @@ event_inherited()
 
 //vida do boss
 
-vida_maxima=3;
-vida_atual=vida_maxima;
+vida=3;
 
 //velocidades 
 max_velh=3;
@@ -13,8 +12,7 @@ max_velh=3;
 
 timer_estado= 0;
 
-ataque =1;
-
+vida_player=obj_player.vida;
 
 
 #region //estado_idle
@@ -35,11 +33,9 @@ estado_idle.inicia=function()
 
 estado_idle.roda=function()
 {
-	//Checando se o plaayer está na tela 
+	//Checando se o player está na tela 
 	
-	
-	
-	if(instance_exists(obj_player))
+	if(instance_exists(obj_player) && vida_player>0)
 	{
 		//se o player estiver perto do boss 
 		
@@ -66,6 +62,7 @@ estado_walk.inicia=function()
 
 	
 	
+	
 }
 
 estado_walk.roda=function()
@@ -82,7 +79,7 @@ estado_walk.roda=function()
 	
 	mp_potential_step_object(obj_player.x,obj_player.y,1,obj_colisor);
 	
-	if(_dist>40)
+	if(_dist>20)
 	{
 		//definindo minha velocidade 
 		velh=lengthdir_x(max_velh, _dir)
@@ -92,6 +89,9 @@ estado_walk.roda=function()
 		velh=0;
 		troca_estado(estado_attack);
 	}
+	
+	//definindo o xscale com base no destino x
+	xscale= sign(x-obj_player.x);
 }
 #endregion
 
@@ -99,13 +99,13 @@ estado_walk.roda=function()
 estado_hurt.inicia=function()
 {
 	//definindo a sprite
-	sprite_index=spr_boss_left_hit;
+	sprite_index=spr_boss_hit;
 	
 	//iniciar animação no começo 
 	image_index=0;
 	
 	//perdendo vida
-	vida_atual--;
+	vida--;
 }
 
 estado_hurt.roda=function()
@@ -115,7 +115,7 @@ estado_hurt.roda=function()
 	//checando se a animação acabou 
 	if(image_index>=image_number-.5)
 {	
-	if (vida_atual>0)
+	if (vida>0)
 	{
 		troca_estado(estado_walk);
 	}
@@ -146,11 +146,13 @@ estado_death.roda=function()
 	{
 		instance_destroy();
 	}
+	
+	vida=3;
 
 }
 #endregion
 
-#region //esado_attack
+#region //estado attack
 estado_attack.inicia=function()
 {
 	//definindo a sprite
@@ -158,15 +160,39 @@ estado_attack.inicia=function()
 	
 	//iniciar animação no começo 
 	image_index=0;
+	
+	dano=noone;
+	
+		//Criando o dano 
+		
+	if(dano ==noone)
+	{
+		dano=instance_create_depth(x,y, depth, obj_dano_boss);
+		vida_player--;
+	}
+	
 }
 
 estado_attack.roda=function()
 {
+	
 	if (image_index >=image_number-.5)
 	{
 		troca_estado(estado_idle);
 	}
 	
 }
+estado_attack.finaliza=function(){
+	if(instance_exists(dano))
+	{
+	instance_destroy(dano);
+	}
+	dano=noone;
+}
+
+
 
 #endregion
+
+
+dir=xscale;

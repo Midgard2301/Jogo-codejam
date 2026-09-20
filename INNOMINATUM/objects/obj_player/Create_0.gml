@@ -8,6 +8,9 @@ window_set_size(640, 360);
 window_center();
 
 meu_dano=noone;
+	
+vida_inimigo=noone;
+
 
 #region // iniciando estados
 //iniciando primeiro estado 
@@ -21,6 +24,12 @@ estado_attack = new estado();
 
 //estado de tiro
 estado_tiro= new estado();
+
+//estado hurt
+estado_hurt=new estado();
+
+//estado death
+estado_death=new estado();
 #endregion
 
 #region //estado idle
@@ -123,14 +132,13 @@ estado_attack.inicia=function()
 	
 	velh=0;
 	velv=0;
-	
-	
-	
+
 	
 	//Criando o dano 
 	var _x= x + lengthdir_x(16, dir*90);
 	var _y= y + lengthdir_y (16, dir*90);
-	
+
+
 	meu_dano=instance_create_depth(_x,_y, depth, obj_dano);
 	
 	
@@ -154,6 +162,42 @@ estado_attack.finaliza= function()
 
 #endregion
 
+#region //estado hurt
+
+estado_hurt.inicia=function()
+{
+	sprite_index=definindo_sprite(dir, spr_plater_right_hit,spr_player_front_hit, spr_player_back_hit)
+	
+	image_index=0;
+		
+		
+	velh=0;
+	velv=0;
+	vida--;
+	imagemindex=0;
+	
+
+}
+
+estado_hurt.roda=function()
+{
+
+	if(image_index>=image_number-0.2){
+	if (vida>0)
+	{
+		troca_estado(estado_idle);
+	}
+	else
+	{
+		troca_estado(estado_death);
+	}
+	
+	}
+	
+}
+
+#endregion
+
 #region // estado tiro
 	estado_tiro.inicia=function()
 	{
@@ -169,13 +213,16 @@ estado_attack.finaliza= function()
 	var _x=x+lengthdir_x(30, dir*90);
 	var _y=y+lengthdir_y(28, dir*90);
 	
+
 	var _tiro=instance_create_depth(_x,_y,depth+1, obj_tiro);
-			
+	
 	// Define a direção exata para onde o tiro deve ir 
 	_tiro.direction = dir * 90;
 	
 	//definada a velocidade 
 	_tiro.speed=vel_tiro;
+			
+
 
 	
 	}
@@ -237,9 +284,11 @@ vel_tiro=3;
 
 //controlando a direção que o player está olhando 
 dir =0;
+
+//vida do player 
+vida=2;
+
 #endregion
-
-
 
 //inicia minha maquina de estados 
 inicia_estado(estado_idle);
