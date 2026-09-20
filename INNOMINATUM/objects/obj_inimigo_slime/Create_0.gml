@@ -7,6 +7,11 @@
 	destino_y=0;
 	
 	alvo=noone;
+	
+	dano=noone;
+	
+	vida_player=obj_player.vida;
+	
 // Inherit the parent event
 event_inherited();
 
@@ -149,13 +154,22 @@ estado_attack.inicia=function()
 	
 	//iniciar animação no começo 
 	image_index=0;
+	
+
+	
+	//Criando o dano 
+		
+	if(dano == noone && vida_player>0)
+	{
+		dano=instance_create_depth(x,y, depth, obj_dano_boss);
+	
+	}
 }
 
 estado_attack.roda=function()
 {
 	if (image_index >=image_number-.5)
 	{
-		
 		troca_estado(estado_idle);
 	}
 	
@@ -163,6 +177,10 @@ estado_attack.roda=function()
 
 estado_attack.finaliza=function()
 {
+	if(instance_exists(dano))
+	{
+	instance_destroy(dano);
+	}
 alvo=noone
 }
 
