@@ -1,37 +1,33 @@
 //criando um timer para mudar de direção 
-	tempo_estado=game_get_speed(gamespeed_fps)*2	;
-	timer_estado= tempo_estado;
+tempo_estado=game_get_speed(gamespeed_fps)*2;
+timer_estado= tempo_estado;
 
-	//escolhendo um local no mapa e indo até ele 
-	destino_x=0;
-	destino_y=0;
+//escolhendo um local no mapa e indo até ele 
+destino_x=0;
+destino_y=0;
 	
-	alvo=noone;
+alvo=noone;
 	
-	dano=noone;
+dano=noone;
 	
-	vida_player=obj_player.vida;
+vida_player=obj_player.vida;
 	
 // Inherit the parent event
 event_inherited();
 
 //tudo que eu esvrever a baixo desse código event_inherited(); é sobrescrito
-
-
 #region //estado_idle
 estado_idle.inicia=function()
 {
 	//definindo a sprite
 	sprite_index=spr_slime_idle;
 	
-		
 	//iniciar animação no começo 
 	image_index=0;
 	
 	image_blend=c_white;
 	
 	timer_estado=tempo_estado;
-	
 }
 
 estado_idle.roda=function()
@@ -51,7 +47,7 @@ estado_idle.roda=function()
 
 #endregion
 
-#region //esado_walk
+#region //estado_walk
 estado_walk.inicia=function()
 {
 	//definindo a sprite
@@ -91,7 +87,7 @@ estado_walk.roda=function()
 }
 #endregion
 
-#region //esado_hurt
+#region //estado_hurt
 estado_hurt.inicia=function()
 {
 	//definindo a sprite
@@ -126,7 +122,7 @@ estado_hurt.roda=function()
 }
 #endregion
 
-#region //esado_death
+#region //estado_death
 estado_death.inicia=function()
 {
 	//definindo a sprite
@@ -138,6 +134,8 @@ estado_death.inicia=function()
 
 estado_death.roda=function()
 {
+	instance_destroy(obj_tiro);
+	
 	if(image_index>=image_number-.5)
 	{
 		instance_destroy();
@@ -146,7 +144,7 @@ estado_death.roda=function()
 }
 #endregion
 
-#region //esado_attack
+#region //estado_attack
 estado_attack.inicia=function()
 {
 	//definindo a sprite
@@ -154,34 +152,29 @@ estado_attack.inicia=function()
 	
 	//iniciar animação no começo 
 	image_index=0;
-	
-
-	
-	//Criando o dano 
-		
-	if(dano == noone && vida_player>0)
-	{
-		dano=instance_create_depth(x,y, depth, obj_dano_boss);
-	
-	}
 }
 
 estado_attack.roda=function()
 {
-	if (image_index >=image_number-.5)
+	if(dano == noone && vida_player>0 && image_index >= 7)
 	{
-		troca_estado(estado_idle);
+		dano=instance_create_depth(x,y, depth, obj_dano_inimigo);
 	}
 	
+	if (image_index >= image_number-.5)
+	{
+		troca_estado(estado_hunt);
+	}
 }
 
 estado_attack.finaliza=function()
 {
 	if(instance_exists(dano))
 	{
-	instance_destroy(dano);
+		instance_destroy(dano);
 	}
-alvo=noone
+	
+	dano=noone;
 }
 
 #endregion
@@ -208,6 +201,7 @@ estado_hunt.roda= function(){
 	{
 		alvo=noone;
 		troca_estado(estado_idle);
+		return;
 	}
 	
 	

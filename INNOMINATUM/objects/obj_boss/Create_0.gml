@@ -1,34 +1,26 @@
 event_inherited()
 
-
 //vida do boss
-
 vida=3;
+
+dano=noone;
 
 //velocidades 
 max_velh=3;
-max_velh=3;
-
 
 timer_estado= 0;
 
 vida_player=obj_player.vida;
 
-
 #region //estado_idle
 estado_idle.inicia=function()
 {
-	
 	//logica do estado 
-	
 	//definindo a sprite
 	sprite_index=spr_boss_idle_front;
-	
 		
 	//iniciar animação no começo 
 	image_index=0;
-	
-	
 }
 
 estado_idle.roda=function()
@@ -41,17 +33,15 @@ estado_idle.roda=function()
 		
 		var _dist=point_distance(x, y, obj_player.x, obj_player.y);
 		if(_dist<300){
-				troca_estado(estado_walk);
+				troca_estado(estado_hunt);
 		}
-
 	}
-		
 }
 
 #endregion
 
-#region //esado_walk
-estado_walk.inicia=function()
+#region //estado_hunt
+estado_hunt.inicia=function()
 {
 	//esse estado de caçar o playe
 	//definindo a sprite
@@ -59,13 +49,9 @@ estado_walk.inicia=function()
 	
 	//iniciar animação no começo 
 	image_index=0;
-
-	
-	
-	
 }
 
-estado_walk.roda=function()
+estado_hunt.roda=function()
 {
 	if(!instance_exists(obj_player)	)
 	{	
@@ -95,7 +81,7 @@ estado_walk.roda=function()
 }
 #endregion
 
-#region //esado_hurt
+#region //estado_hurt
 estado_hurt.inicia=function()
 {
 	//definindo a sprite
@@ -117,7 +103,7 @@ estado_hurt.roda=function()
 {	
 	if (vida>0)
 	{
-		troca_estado(estado_walk);
+		troca_estado(estado_hunt);
 	}
 	else
 	{
@@ -130,7 +116,7 @@ estado_hurt.roda=function()
 }
 #endregion
 
-#region //esado_death
+#region //estado_death
 estado_death.inicia=function()
 {
 	//definindo a sprite
@@ -141,14 +127,15 @@ estado_death.inicia=function()
 }
 
 estado_death.roda=function()
-{
-	if(image_index>=image_number-.5)
+{	
+	instance_destroy(obj_tiro);
+	
+	if(image_index >= image_number-.5)
 	{
 		instance_destroy();
 	}
 	
-	vida=3;
-
+	//vida=3; essa variável estava ressucitando o boss ent comentei ela ok?
 }
 #endregion
 
@@ -160,39 +147,31 @@ estado_attack.inicia=function()
 	
 	//iniciar animação no começo 
 	image_index=0;
-	
-	dano=noone;
-	
-		//Criando o dano 
-		
-	if(dano ==noone)
-	{
-		dano=instance_create_depth(x,y, depth, obj_dano_boss);
-		vida_player--;
-	}
-	
 }
 
 estado_attack.roda=function()
-{
-	
-	if (image_index >=image_number-.5)
+{	
+	if(dano == noone && vida_player>0 && image_index >= 2)
 	{
-		troca_estado(estado_idle);
+		dano=instance_create_depth(x,y, depth, obj_dano_inimigo);
 	}
 	
+	if (image_index >= image_number-.5)
+	{
+		troca_estado(estado_hunt);
+	}
 }
 estado_attack.finaliza=function(){
 	if(instance_exists(dano))
 	{
-	instance_destroy(dano);
+		instance_destroy(dano);
 	}
-	dano=noone;
+	
+	dano = noone;
 }
 
 
 
 #endregion
-
 
 dir=xscale;

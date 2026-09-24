@@ -52,12 +52,13 @@ function troca_estado(_estado){
 
 function definindo_sprite(_dir=0, sprite_side,sprite_front,sprite_back)
 {
-var _sprite;
+	var _sprite;
+	
 	switch(_dir){
-	case 0:_sprite=sprite_side; break;
-	case 1:_sprite=sprite_back; break;
-	case 2:_sprite=sprite_side; break;
-	case 3:_sprite=sprite_front; break;
+		case 0:_sprite=sprite_side; break;
+		case 1:_sprite=sprite_back; break;
+		case 2:_sprite=sprite_side; break;
+		case 3:_sprite=sprite_front; break;
 	}
 	return _sprite;
 	

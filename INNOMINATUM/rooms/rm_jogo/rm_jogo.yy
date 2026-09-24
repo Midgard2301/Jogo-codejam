@@ -51,8 +51,8 @@
   ],
   "name":"rm_jogo",
   "parent":{
-    "name":"INNOMINATUM",
-    "path":"INNOMINATUM.yyp",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

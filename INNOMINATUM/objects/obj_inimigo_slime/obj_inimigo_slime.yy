@@ -11,8 +11,8 @@
   "name":"obj_inimigo_slime",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objects/Entidades/Inimigos.yy",
+    "name":"Inimigos comuns",
+    "path":"folders/Objects/Entidades/Inimigos/Inimigos comuns.yy",
   },
   "parentObjectId":{
     "name":"obj_inimigo_pai",

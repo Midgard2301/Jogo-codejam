@@ -28,6 +28,6 @@ margem =lerp(margem, 20, .2);
 //Ao selecionar clicar enter, executa a função 
 if(keyboard_check_pressed(vk_enter))
 {
-	menu[atual].funcao(); 
+	menu[atual].funcao();
 }
 

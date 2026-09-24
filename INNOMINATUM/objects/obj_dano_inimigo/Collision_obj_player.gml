@@ -4,8 +4,8 @@ instance_destroy();
 
 if(vida_player>0)
 {
-with(other)
-{
-troca_estado(estado_hurt);
-}
+	with(other)
+	{
+		troca_estado(estado_hurt);
+	}
 }

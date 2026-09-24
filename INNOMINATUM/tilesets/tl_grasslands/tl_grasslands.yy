@@ -1,7 +1,9 @@
 {
   "$GMTileSet":"v1",
   "%Name":"tl_grasslands",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"gramado/terra","closed_edge":false,"name":"gramado/terra","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[219,289,286,287,199,229,0,188,196,0,226,190,197,248,250,339,],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,

@@ -1,22 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_boss",
+  "%Name":"obj_dano_player",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_inimigo_pai","path":"objects/obj_inimigo_pai/obj_inimigo_pai.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_boss",
+  "name":"obj_dano_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Primeiro_boss",
-    "path":"folders/Objects/Entidades/Inimigos/Bosses/Primeiro_boss.yy",
+    "name":"Player",
+    "path":"folders/Objects/Entidades/Player.yy",
   },
-  "parentObjectId":{
-    "name":"obj_inimigo_pai",
-    "path":"objects/obj_inimigo_pai/obj_inimigo_pai.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,9 +32,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_boss_idle_front",
-    "path":"sprites/spr_boss_idle_front/spr_boss_idle_front.yy",
+    "name":"spr_dano",
+    "path":"sprites/spr_dano/spr_dano.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

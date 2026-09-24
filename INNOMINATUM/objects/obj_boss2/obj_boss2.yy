@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_dano_boss",
+  "%Name":"obj_boss2",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_dano_boss",
+  "name":"obj_boss2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Boss",
-    "path":"folders/Objects/Entidades/Boss.yy",
+    "name":"Segundo_boss",
+    "path":"folders/Objects/Entidades/Inimigos/Bosses/Segundo_boss.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,9 +31,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dano",
-    "path":"sprites/spr_dano/spr_dano.yy",
+    "name":"spr_boss2_idle",
+    "path":"sprites/spr_boss2_idle/spr_boss2_idle.yy",
   },
-  "spriteMaskId":null,
-  "visible":false,
+  "spriteMaskId":{
+    "name":"spr_boss2_idle",
+    "path":"sprites/spr_boss2_idle/spr_boss2_idle.yy",
+  },
+  "visible":true,
 }
