@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"death",
-    "path":"folders/Sprites/Bosses/Primeiro_Boss/death.yy",
+    "name":"Primeiro_Boss",
+    "path":"folders/Sprites/Bosses/Primeiro_Boss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

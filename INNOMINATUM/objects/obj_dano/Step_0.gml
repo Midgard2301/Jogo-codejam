@@ -13,13 +13,17 @@ for (var i=0; i< ds_list_size(_lista); i++)
 	//checando o inimigo atual não existe na minha lista de inimigos
 	var _existe=array_contains(lista_inimigos, _atual);
 	
-	//se o inimigo não existe na lista de inimigos
+	//se o inimigo não existe na lista de inimigos	
 	if(!_existe){
 		array_push(lista_inimigos, _atual);
 		//eu vou dar dano 
 		with(_atual)
 		{
-			troca_estado(estado_hurt);
+			if(vida>0)
+			{
+				troca_estado(estado_hurt);	
+			}
+
 		}
 	}	
 }
@@ -27,3 +31,4 @@ for (var i=0; i< ds_list_size(_lista); i++)
 //depois que eu usei a lista, eu zero ela 
 
 ds_list_destroy(_lista);
+

@@ -6,6 +6,6 @@ if(vida_player>0)
 {
 with(other)
 {
-troca_estado(estado_hurt);
+troca_estado(estado_hit);
 }
 }

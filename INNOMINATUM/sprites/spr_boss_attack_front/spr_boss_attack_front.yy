@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Attack",
-    "path":"folders/Sprites/Bosses/Primeiro_Boss/Attack.yy",
+    "name":"Primeiro_Boss",
+    "path":"folders/Sprites/Bosses/Primeiro_Boss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"walk",
-    "path":"folders/Sprites/Bosses/Primeiro_Boss/walk.yy",
+    "name":"Primeiro_Boss",
+    "path":"folders/Sprites/Bosses/Primeiro_Boss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Idle",
-    "path":"folders/Sprites/Bosses/Primeiro_Boss/Idle.yy",
+    "name":"Primeiro_Boss",
+    "path":"folders/Sprites/Bosses/Primeiro_Boss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

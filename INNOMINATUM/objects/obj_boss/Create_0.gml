@@ -12,8 +12,6 @@ max_velh=3;
 
 timer_estado= 0;
 
-vida_player=obj_player.vida;
-
 
 #region //estado_idle
 estado_idle.inicia=function()
@@ -35,7 +33,7 @@ estado_idle.roda=function()
 {
 	//Checando se o player está na tela 
 	
-	if(instance_exists(obj_player) && vida_player>0)
+	if(instance_exists(obj_player) && obj_player.vida>0)
 	{
 		//se o player estiver perto do boss 
 		
@@ -104,8 +102,14 @@ estado_hurt.inicia=function()
 	//iniciar animação no começo 
 	image_index=0;
 	
+	
 	//perdendo vida
 	vida--;
+	
+	if (vida <= 0)
+	{
+		troca_estado(estado_death);
+	}
 }
 
 estado_hurt.roda=function()
@@ -114,17 +118,9 @@ estado_hurt.roda=function()
 	//saindo do estado hurt
 	//checando se a animação acabou 
 	if(image_index>=image_number-.5)
-{	
-	if (vida>0)
-	{
+	{	
 		troca_estado(estado_walk);
 	}
-	else
-	{
-		troca_estado(estado_death);
-	}
-	
-}
 	
 
 }
@@ -147,7 +143,6 @@ estado_death.roda=function()
 		instance_destroy();
 	}
 	
-	vida=3;
 
 }
 #endregion
@@ -163,22 +158,21 @@ estado_attack.inicia=function()
 	
 	dano=noone;
 	
-		//Criando o dano 
-		
-	if(dano ==noone)
-	{
-		dano=instance_create_depth(x,y, depth, obj_dano_boss);
-		vida_player--;
-	}
-	
 }
 
 estado_attack.roda=function()
 {
+	//Criando o dano 
+		
+	if(dano ==noone && image_index>=3 )
+	{
+		dano=instance_create_depth(x,y, depth, obj_dano_boss);
+	}
 	
 	if (image_index >=image_number-.5)
 	{
 		troca_estado(estado_idle);
+		timer_estado--;
 	}
 	
 }
