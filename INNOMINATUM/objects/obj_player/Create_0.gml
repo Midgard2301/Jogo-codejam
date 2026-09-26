@@ -268,7 +268,7 @@ vel_tiro=3;
 dir =0;
 
 //vida do player 
-vida=2;
+vida=5;
 
 #endregion
 

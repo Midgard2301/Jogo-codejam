@@ -15,6 +15,7 @@ estado_attack=new estado();
 
 estado_hunt=new estado();
 
+verificar_fase_atual = new estado();
 
 //iniciando o estado
 

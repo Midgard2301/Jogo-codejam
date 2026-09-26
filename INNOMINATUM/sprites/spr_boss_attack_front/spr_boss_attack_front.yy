@@ -30,7 +30,7 @@
   "origin":9,
   "parent":{
     "name":"Attack",
-    "path":"folders/Sprites/Bosses/Primeiro_Boss/Attack.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Primeiro_Boss/Attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

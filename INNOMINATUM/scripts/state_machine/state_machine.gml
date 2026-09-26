@@ -23,9 +23,7 @@ function inicia_estado(_estado){
 	estado_atual=_estado;
 	
 	//Iniciando estado atual 
-	estado_atual.inicia();	
-
-
+	estado_atual.inicia();
 }
 
 

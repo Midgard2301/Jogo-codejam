@@ -9,13 +9,15 @@ destino_y=0;
 alvo=noone;
 	
 dano=noone;
+
+range = 10;
 	
 vida_player=obj_player.vida;
 	
 // Inherit the parent event
 event_inherited();
 
-//tudo que eu esvrever a baixo desse código event_inherited(); é sobrescrito
+//tudo que eu escrever a baixo desse código event_inherited(); é sobrescrito
 #region //estado_idle
 estado_idle.inicia=function()
 {
@@ -82,8 +84,6 @@ estado_walk.roda=function()
 	
 	//indo até o meu destino enquanto desvio de obstáculos 
 	mp_potential_step_object(destino_x, destino_y, 1,obj_colisor);
-	
-	
 }
 #endregion
 
@@ -188,16 +188,14 @@ estado_hunt.inicia=function()
 	
 	image_blend=c_yellow;
 	
-	if(instance_exists(obj_player)	)
+	if(instance_exists(obj_player))
 	{
 		alvo=obj_player.id;
 	}
-	
-
 }
 
 estado_hunt.roda= function(){
-	if(!instance_exists(obj_player)	)
+	if(!instance_exists(obj_player))
 	{
 		alvo=noone;
 		troca_estado(estado_idle);
@@ -211,7 +209,7 @@ estado_hunt.roda= function(){
 	//checando a distância para o player 
 	var _dist=point_distance(x,y, alvo.x,alvo.y);
 	
-	if (_dist <=10){
+	if (_dist <= range){
 		troca_estado(estado_attack);
 	}
 	

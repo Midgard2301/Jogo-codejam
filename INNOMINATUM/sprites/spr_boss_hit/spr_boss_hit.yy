@@ -29,7 +29,7 @@
   "origin":9,
   "parent":{
     "name":"hurt",
-    "path":"folders/Sprites/Bosses/Primeiro_Boss/hurt.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Primeiro_Boss/hurt.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

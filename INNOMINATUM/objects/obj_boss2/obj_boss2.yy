@@ -12,7 +12,10 @@
     "name":"Segundo_boss",
     "path":"folders/Objects/Entidades/Inimigos/Bosses/Segundo_boss.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_inimigo_pai",
+    "path":"objects/obj_inimigo_pai/obj_inimigo_pai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,8 +38,8 @@
     "path":"sprites/spr_boss2_idle/spr_boss2_idle.yy",
   },
   "spriteMaskId":{
-    "name":"spr_boss2_idle",
-    "path":"sprites/spr_boss2_idle/spr_boss2_idle.yy",
+    "name":"spr_boss2_attack",
+    "path":"sprites/spr_boss2_attack/spr_boss2_attack.yy",
   },
   "visible":true,
 }

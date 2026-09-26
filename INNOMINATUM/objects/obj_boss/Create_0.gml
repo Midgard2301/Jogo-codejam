@@ -1,14 +1,14 @@
-event_inherited()
+event_inherited();
 
 //vida do boss
-vida=3;
+vida=7;
 
 dano=noone;
 
 //velocidades 
 max_velh=3;
 
-timer_estado= 0;
+//timer_estado= 0;
 
 vida_player=obj_player.vida;
 
@@ -29,7 +29,7 @@ estado_idle.roda=function()
 	
 	if(instance_exists(obj_player) && vida_player>0)
 	{
-		//se o player estiver perto do boss 
+		//se o player estiver perto do boss
 		
 		var _dist=point_distance(x, y, obj_player.x, obj_player.y);
 		if(_dist<300){
@@ -68,7 +68,7 @@ estado_hunt.roda=function()
 	if(_dist>20)
 	{
 		//definindo minha velocidade 
-		velh=lengthdir_x(max_velh, _dir)
+		velh=lengthdir_x(max_velh, _dir);
 	}
 	else
 	{
@@ -100,19 +100,16 @@ estado_hurt.roda=function()
 	//saindo do estado hurt
 	//checando se a animação acabou 
 	if(image_index>=image_number-.5)
-{	
-	if (vida>0)
-	{
-		troca_estado(estado_hunt);
+	{	
+		if (vida>0)
+		{
+			troca_estado(estado_hunt);
+		}
+		else
+		{
+			troca_estado(estado_death);
+		}
 	}
-	else
-	{
-		troca_estado(estado_death);
-	}
-	
-}
-	
-
 }
 #endregion
 
@@ -169,9 +166,6 @@ estado_attack.finaliza=function(){
 	
 	dano = noone;
 }
-
-
-
 #endregion
 
 dir=xscale;

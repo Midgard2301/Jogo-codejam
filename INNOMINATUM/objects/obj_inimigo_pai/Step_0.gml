@@ -1,7 +1,6 @@
 //Profundidade
 depth=-y;
 
-
-//Rodando esrado
+//Rodando estado
 
 roda_estado();
