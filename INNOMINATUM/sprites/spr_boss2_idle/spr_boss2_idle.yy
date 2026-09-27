@@ -29,7 +29,7 @@
   "origin":9,
   "parent":{
     "name":"idle",
-    "path":"folders/Sprites/Inimigos/Bosses/Segundo_boss/idle.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Segundo_Boss/idle.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -28,7 +28,7 @@
   "origin":9,
   "parent":{
     "name":"attack",
-    "path":"folders/Sprites/Inimigos/Bosses/Segundo_boss/attack.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Segundo_Boss/attack.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

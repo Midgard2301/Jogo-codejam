@@ -96,7 +96,6 @@ estado_hurt.inicia=function()
 
 estado_hurt.roda=function()
 {
- 
 	//saindo do estado hurt
 	//checando se a animação acabou 
 	if(image_index>=image_number-.5)
@@ -126,6 +125,7 @@ estado_death.inicia=function()
 estado_death.roda=function()
 {	
 	instance_destroy(obj_tiro);
+	instance_destroy(obj_dano_player);
 	
 	if(image_index >= image_number-.5)
 	{

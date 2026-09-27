@@ -1,6 +1,6 @@
 event_inherited();
 
-vida = 10;
+vida = 5;
 
 dano = noone;
 
@@ -47,7 +47,7 @@ estado_hurt.inicia = function()
 	
 	image_index = 0;
 	
-	vida -= 5;
+	vida --;
 }
 
 estado_hurt.roda = function()
@@ -76,6 +76,7 @@ estado_death.inicia = function()
 estado_death.roda = function()
 {
 	instance_destroy(obj_tiro);
+	instance_destroy(obj_dano_player);
 	
 	if(image_index >= image_number - .5)
 	{

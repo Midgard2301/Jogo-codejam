@@ -78,7 +78,7 @@ estado_walk.roda=function()
 	if(_tempo<=5)
 	{
 		var _estado_novo=choose(estado_idle, estado_walk)
-		//troca_estado(estado_idle);
+		troca_estado(_estado_novo);
 	}
 	
 	

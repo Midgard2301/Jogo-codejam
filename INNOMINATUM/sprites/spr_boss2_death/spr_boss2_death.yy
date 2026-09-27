@@ -33,7 +33,7 @@
   "origin":9,
   "parent":{
     "name":"death",
-    "path":"folders/Sprites/Inimigos/Bosses/Segundo_boss/death.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Segundo_Boss/death.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

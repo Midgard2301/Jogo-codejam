@@ -29,7 +29,7 @@
   "origin":9,
   "parent":{
     "name":"walk",
-    "path":"folders/Sprites/Inimigos/Bosses/Segundo_boss/walk.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Segundo_Boss/walk.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

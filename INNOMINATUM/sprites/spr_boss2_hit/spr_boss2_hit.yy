@@ -28,7 +28,7 @@
   "origin":9,
   "parent":{
     "name":"hit",
-    "path":"folders/Sprites/Inimigos/Bosses/Segundo_boss/hit.yy",
+    "path":"folders/Sprites/Inimigos/Bosses/Segundo_Boss/hit.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
