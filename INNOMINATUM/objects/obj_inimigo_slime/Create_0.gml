@@ -164,7 +164,7 @@ estado_attack.inicia=function()
 estado_attack.roda=function()
 {
 	
-	if(dano == noone && obj_player.vida>0 && image_index>=8)
+	if(dano == noone && obj_player.vida_atual>0 && image_index>=8)
 	{
 		dano=instance_create_depth(x,y, depth, obj_dano_boss);
 	}

@@ -12,13 +12,3 @@ depth=-y;
 // Rodando a minha maquina de estados 
 
 roda_estado();
-
-
-
-if (global.vida_atual <= 0) {
-    //restaurar a vida 
-    global.vida_atual = global.vida_maxima;
-    
-    //recarrear sala
-    room_goto(global.sala_salva);
-}

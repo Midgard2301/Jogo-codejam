@@ -1,4 +1,4 @@
-var vida_player=obj_player.vida;
+var vida_player=obj_player.vida_atual;
 
 instance_destroy();
 

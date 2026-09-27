@@ -21,8 +21,8 @@
   ],
   "name":"Room1",
   "parent":{
-    "name":"INNOMINATUM",
-    "path":"INNOMINATUM.yyp",
+    "name":"rooms",
+    "path":"folders/rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

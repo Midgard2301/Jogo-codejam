@@ -26,7 +26,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"destino","filters":[],"listItems":[],"multiselect":false,"name":"destino","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"boss_room","path":"rooms/boss_room/boss_room.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"boss_room","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"destino","filters":[],"listItems":[],"multiselect":false,"name":"destino","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_boss","path":"rooms/rm_boss/rm_boss.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_boss","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"posicao_x","filters":[],"listItems":[],"multiselect":false,"name":"posicao_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"posicao_y","filters":[],"listItems":[],"multiselect":false,"name":"posicao_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
   ],

@@ -2,7 +2,7 @@
 mask_index = spr_player_idle_front;
 
 // Define o tamanho da janela (Largura, Altura) em pixels
-window_set_size(640, 360);  
+window_set_size(1024, 576);  
 
 // Centraliza a janela na sua tela
 window_center();
@@ -26,7 +26,7 @@ estado_attack = new estado();
 estado_tiro= new estado();
 
 //estado hurt
-estado_hit=new estado();
+estado_hurt=new estado();
 
 //estado death
 estado_death=new estado();
@@ -36,8 +36,11 @@ estado_death=new estado();
 //Meu estado _idle precissa de um inicio 
 estado_idle.inicia=function()
 { 
+	//Definindo a sprite atual com base na direção que eu tô olhando
+	var _sprite=definindo_sprite(dir,  spr_player_idle_side,spr_player_idle_front, spr_player_idle_back);
+	
 	//ajustando o sprite  
-	sprite_index=spr_player_idle_front;
+	sprite_index=_sprite;
 	
 	//garantindo que a animação começo no primeiro frame 
 	image_index=0;
@@ -46,7 +49,7 @@ estado_idle.inicia=function()
 estado_idle.roda=function()
 {
  //se eu estiver em movimento 
- if ((right - left) != 0 || (down - up) != 0)
+ if (up xor left or right xor down)
  {
 	troca_estado(estado_walk);
  }
@@ -54,11 +57,11 @@ estado_idle.roda=function()
  // condição de attack 
  if (attack)
  {
- troca_estado(estado_attack);
+	troca_estado(estado_attack);
  }
  
  if(tiro){
- troca_estado(estado_tiro);
+	troca_estado(estado_tiro);
  }
 }
 #endregion
@@ -68,12 +71,12 @@ estado_idle.roda=function()
 estado_walk.inicia= function()
 {
 	dir=(point_direction(0, 0, right-left, down-up )div 90);
-	//definindo a sprite 
+	//definindo a sprite
 
-	//configurando a sprit 
-	sprite_index=spr_player_walk_front;
+	//configurando a sprite
+	sprite_index=definindo_sprite(dir, spr_player_walk_side,spr_player_walk_front, spr_player_walk_back);
 	
-	//começando  a animação do começo 
+	//começando  a animação do começo
 	image_index=0;
 }
 
@@ -82,7 +85,6 @@ estado_walk.roda = function() {
 		
 	velv=(down-up)*vel;
 	velh=(right-left)*vel;
-    
 	
 	if (velh == 0 && velv == 0) {
         troca_estado(estado_idle);
@@ -103,6 +105,9 @@ estado_walk.roda = function() {
 		}
 	}
 
+	sprite_index=definindo_sprite(dir, spr_player_walk_side,spr_player_walk_front, spr_player_walk_back);
+    // Definindo a Sprite enquanto anda
+
 	
     // Condição para sair
 	//se eu estou parado eu vou para o estado idle 
@@ -117,29 +122,23 @@ estado_walk.roda = function() {
 #region // estado attack
 estado_attack.inicia=function()
 {
-	
 	//ajustando o sprite  
-	sprite_index=spr_player_attack_front;
+	sprite_index=definindo_sprite(dir, spr_player_attack_side,spr_player_attack_front, spr_player_attack_back)
 	
 	//garantindo que a animação começo no primeiro frame 
 	image_index=0;
 	
 	velh=0;
 	velv=0;
-
 	
 	//Criando o dano 
 	var _x= x + lengthdir_x(16, dir*90);
 	var _y= y + lengthdir_y (16, dir*90);
 
-
-	meu_dano=instance_create_depth(_x,_y, depth, obj_dano);
-	
-	
+	meu_dano=instance_create_depth(_x,_y, depth, obj_dano_player);
 }
 
 //saindo do estado attack
-
 estado_attack.roda=function()
 {	
 	//compara o número de imagens com a imagem de ataque 
@@ -156,43 +155,39 @@ estado_attack.finaliza= function()
 
 #endregion
 
-#region //estado hit
+#region //estado hurt
 
-estado_hit.inicia=function()
+estado_hurt.inicia=function()
 {
-	sprite_index=definindo_sprite(dir, spr_plater_right_hit,spr_player_front_hit, spr_player_back_hit)
+	sprite_index=definindo_sprite(dir, spr_player_right_hit,spr_player_front_hit, spr_player_back_hit)
 	
 	image_index=0;
-		
-		
+
 	velh=0;
 	velv=0;
-	vida_atual--;
-	
+	vida--;
+	imagemindex=0;
 }
 
-estado_hit.roda=function()
+estado_hurt.roda=function()
 {
-
 	if(image_index>=image_number-0.2){
-	if (vida_atual>0)
-	{
-		troca_estado(estado_idle);
+		if (vida>0)
+		{
+			troca_estado(estado_idle);
+		}
+		else
+		{
+			troca_estado(estado_death);
+		}
 	}
-	else
-	{
-		troca_estado(estado_death);
-	}
-	
-	}
-	
 }
 
 #endregion
 
 #region // estado tiro
-	estado_tiro.inicia=function()
-	{
+estado_tiro.inicia=function()
+{
 	//ajustando o sprite  
 	sprite_index=definindo_sprite(dir, spr_player_attack_side,spr_player_attack_front, spr_player_attack_back)
 	
@@ -204,7 +199,6 @@ estado_hit.roda=function()
 	
 	var _x=x+lengthdir_x(30, dir*90);
 	var _y=y+lengthdir_y(28, dir*90);
-	
 
 	var _tiro=instance_create_depth(_x,_y,depth+1, obj_tiro);
 	
@@ -213,11 +207,7 @@ estado_hit.roda=function()
 	
 	//definada a velocidade 
 	_tiro.speed=vel_tiro;
-			
-
-
-	
-	}
+}
 	
 	
 estado_tiro.roda=function()
@@ -231,7 +221,7 @@ estado_tiro.roda=function()
 	
 #endregion
 
-#region //esado_death
+#region //estado_death
 estado_death.inicia=function()
 {
 	//definindo a sprite
@@ -245,9 +235,7 @@ estado_death.roda=function()
 {
 	if(image_index>=image_number-.5)
 	{
-		vida_atual = 2;
-		
-		room_goto(global.sala_salva);
+		instance_destroy();
 	}
 
 }
@@ -280,7 +268,7 @@ vel_tiro=3;
 dir =0;
 
 //vida do player 
-global.vida_atual = 2;
+vida=2;
 
 #endregion
 

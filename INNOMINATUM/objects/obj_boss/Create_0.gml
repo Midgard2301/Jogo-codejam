@@ -33,7 +33,7 @@ estado_idle.roda=function()
 {
 	//Checando se o player está na tela 
 	
-	if(instance_exists(obj_player) && obj_player.vida>0)
+	if(instance_exists(obj_player) && obj_player.vida_atual>0)
 	{
 		//se o player estiver perto do boss 
 		

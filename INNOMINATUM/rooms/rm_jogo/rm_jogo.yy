@@ -17,6 +17,7 @@
     {"name":"inst_15260059","path":"rooms/rm_jogo/rm_jogo.yy",},
     {"name":"inst_2D102F66","path":"rooms/rm_jogo/rm_jogo.yy",},
     {"name":"inst_220B8990","path":"rooms/rm_jogo/rm_jogo.yy",},
+    {"name":"inst_43D13397","path":"rooms/rm_jogo/rm_jogo.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -26,10 +27,11 @@
       ],"layers":[],"name":"Flora","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":-900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_36055CF4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_36055CF4","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":128.0,},
-        {"$GMRInstance":"v4","%Name":"inst_220B8990","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_220B8990","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"properties":[
+        {"$GMRInstance":"v4","%Name":"inst_220B8990","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_220B8990","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"posicao_x","path":"objects/obj_sensor/obj_sensor.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"58",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},"propertyId":{"name":"posicao_y","path":"objects/obj_sensor/obj_sensor.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"124",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.40625,"x":224.0,"y":365.0,},
+        {"$GMRInstance":"v4","%Name":"inst_43D13397","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_43D13397","objectId":{"name":"obj_game_maneger","path":"objects/obj_game_maneger/obj_game_maneger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":4.0,"y":4.0,},
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Inimigos","depth":-800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_A222223","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_A222223","objectId":{"name":"obj_inimigo_slime","path":"objects/obj_inimigo_slime/obj_inimigo_slime.yy",},"properties":[
@@ -50,14 +52,14 @@
       ],"layers":[],"name":"Colisores","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Base","depth":32,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Base","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":25,"SerialiseWidth":50,"TileCompressedData":[
           1,219,-49,156,1,219,-49,156,1,219,-49,156,1,219,-49,156,1,219,-49,156,1,219,-49,156,1,219,-49,156,1,
-          219,-49,156,1,219,-49,156,1,219,-799,156,
+          219,-49,156,1,219,-49,156,1,219,-714,156,1,0,-84,156,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tl_grasslands","path":"tilesets/tl_grasslands/tl_grasslands.yy",},"userdefinedDepth":true,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":132,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"rm_jogo",
   "parent":{
-    "name":"INNOMINATUM",
-    "path":"INNOMINATUM.yyp",
+    "name":"rooms",
+    "path":"folders/rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
@@ -72,7 +74,7 @@
   "roomSettings":{
     "Height":400,
     "inheritRoomSettings":false,
-    "persistent":false,
+    "persistent":true,
     "Width":800,
   },
   "sequenceId":null,
