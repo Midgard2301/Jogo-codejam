@@ -42,15 +42,7 @@ opcao5 =
 	}
 }
 
-opcao6 =
-{
-	texto: "Quarto boss",
-	funcao: function(){
-		room_goto(boss4_room);
-	}
-}
-
-menu=[opcao1, opcao2, opcao3, opcao4, opcao5, opcao6];
+menu=[opcao1, opcao2, opcao3, opcao4, opcao5];
 
 //variavel para saber qual indice atual 
 atual=0;
