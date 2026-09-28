@@ -2,7 +2,7 @@
 mask_index = spr_player_idle_front;
 
 // Define o tamanho da janela (Largura, Altura) em pixels
-window_set_size(1024, 576);  
+//window_set_size(1024, 576); 
 
 // Centraliza a janela na sua tela
 window_center();
@@ -10,7 +10,6 @@ window_center();
 meu_dano=noone;
 	
 vida_inimigo=noone;
-
 
 #region // iniciando estados
 //iniciando primeiro estado 
@@ -30,6 +29,9 @@ estado_hurt=new estado();
 
 //estado death
 estado_death=new estado();
+
+//estado_dialogo
+estado_dialogo = new estado();
 #endregion
 
 #region //estado idle
@@ -63,10 +65,15 @@ estado_idle.roda=function()
  if(tiro){
 	troca_estado(estado_tiro);
  }
+ 
+ if(action)
+ {
+	troca_estado(estado_dialogo);
+ }
 }
 #endregion
 
-#region //estado walk 
+#region //estado walk
 
 estado_walk.inicia= function()
 {
@@ -116,6 +123,11 @@ estado_walk.roda = function() {
 	{
 		troca_estado(estado_attack)		
 	}
+	
+	if(action)
+	 {
+		troca_estado(estado_dialogo);
+	 }
 }
 #endregion
 
@@ -241,6 +253,45 @@ estado_death.roda=function()
 }
 #endregion
 
+#region //estado_dialogo
+estado_dialogo.inicia = function()
+{
+	_npc = collision_rectangle(bbox_left - 5, bbox_top - 15, bbox_right + 5, bbox_bottom + 5, obj_npc_pai, false, 1);
+	
+	if(_npc)
+	{
+		if(action && dialogo == noone)
+		{
+			//Passando os dados corretos para o diálogo
+			dialogo = instance_create_depth(0, 0, 0, obj_dialogo);
+			dialogo.atualiza_dialogo(_npc.dialogo);
+			action = false;
+		}
+	}
+}
+estado_dialogo.roda = function()
+{
+	if(action)
+	{
+		if(instance_exists(dialogo))
+		{
+			if(pag < _npc.limite_pagina - 1)
+			{
+				pag++;
+				dialogo.atualiza_dialogo(_npc.dialogo);
+			}
+			else
+			{
+				instance_destroy(dialogo);
+				dialogo = noone;
+				pag = 0;
+				troca_estado(estado_idle);
+			}
+		}
+	}
+}
+#endregion
+
 #region // iniciando variáveis 
 
 //Controles sendo iniciados sem valor 
@@ -251,12 +302,19 @@ left=noone;
 right=noone;
 attack=noone;
 tiro=noone;
+
+//Diálogo
+
+action = 0;
+pag = 0;
+dialogo = noone;
+var _npc;
+
 //Variáveis de movimento
 //iniciando parado 
 
 velh=0;
 velv=0;
-
 
 //velocidade do jogador
 vel=2;
@@ -269,7 +327,6 @@ dir =0;
 
 //vida do player 
 vida=5;
-
 #endregion
 
 //inicia minha maquina de estados 
