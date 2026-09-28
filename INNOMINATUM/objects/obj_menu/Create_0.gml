@@ -18,31 +18,10 @@ opcao2	=
 	}
 }
 
-opcao3	=
-{
-	texto: "Boss",
-	funcao: function(){
-		room_goto(boss_room);
-	}
-}
 
-opcao4 =
-{
-	texto: "segundo boss",
-	funcao: function(){
-		room_goto(boss2_room);	
-	}
-}
 
-opcao5 =
-{
-	texto: "Terceiro boss",
-	funcao: function(){
-		room_goto(boss3_room);
-	}
-}
 
-menu=[opcao1, opcao2, opcao3, opcao4, opcao5];
+menu=[opcao1, opcao2];
 
 //variavel para saber qual indice atual 
 atual=0;

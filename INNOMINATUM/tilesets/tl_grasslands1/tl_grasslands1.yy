@@ -1,0 +1,40 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"tl_grasslands1",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"gramado/terra","closed_edge":false,"name":"gramado/terra","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[219,289,286,287,199,229,0,188,196,0,226,190,197,248,250,339,],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"tl_grasslands1",
+  "out_columns":29,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"sqr_tileset",
+    "path":"sprites/sqr_tileset/sqr_tileset.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":16,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":16,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":870,
+}
