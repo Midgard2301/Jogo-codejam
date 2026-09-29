@@ -31,6 +31,7 @@
     {"$GMRInstanceLayer":"","%Name":"Inimigos","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_4CD74EC7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4CD74EC7","objectId":{"name":"obj_boss2","path":"objects/obj_boss2/obj_boss2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":416.0,},
       ],"layers":[],"name":"Inimigos","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+<<<<<<< Updated upstream
     {"$GMRTileLayer":"","%Name":"gramado","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"gramado","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":56,"TileCompressedData":[
           -191,219,1,196,-4,197,4,199,219,219,196,-3,197,6,199,219,219,196,197,199,-32,219,7,196,197,197,199,219,
           219,226,-4,339,4,229,219,219,226,-3,339,13,229,219,219,226,339,248,197,197,199,219,219,196,199,-24,219,
@@ -68,6 +69,33 @@
           -4,287,4,289,219,219,286,-3,287,1,289,-285,219,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tl_grasslands1","path":"tilesets/tl_grasslands1/tl_grasslands1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"chao","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"chao","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":32,"SerialiseWidth":56,"TileCompressedData":[-1792,277,],"TileDataFormat":1,},"tilesetId":{"name":"tl_grasslands1","path":"tilesets/tl_grasslands1/tl_grasslands1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+=======
+    {"$GMRTileLayer":"","%Name":"gramado","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"gramado","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":23,"SerialiseWidth":40,"TileCompressedData":[
+          -143,219,1,196,-4,197,4,199,219,219,196,-3,197,5,199,219,219,196,197,-17,219,7,196,197,197,199,219,219,
+          226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-16,219,8,196,250,339,339,229,219,219,226,
+          -4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-13,219,4,196,197,197,250,-3,339,4,229,219,219,
+          226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-13,219,1,226,-6,339,4,229,219,219,226,-4,
+          339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-13,219,1,226,-6,339,4,229,219,219,226,-4,339,4,229,
+          219,219,226,-3,339,5,229,219,219,226,339,-8,219,6,196,197,199,219,219,226,-6,339,4,229,219,219,226,-4,
+          339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-7,219,7,196,250,339,229,219,219,226,-6,339,4,229,
+          219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-7,219,7,226,339,339,229,219,219,226,
+          -6,339,4,229,219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-6,219,8,196,250,339,
+          339,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-6,
+          219,1,226,-3,339,4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,
+          219,226,339,-5,219,2,196,250,-3,339,4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,
+          226,-3,339,5,229,219,219,226,339,-5,219,1,226,-4,339,4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,
+          4,229,219,219,226,-3,339,5,229,219,219,226,339,-5,219,1,226,-4,339,4,229,219,219,226,-6,339,4,229,219,
+          219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-4,219,2,196,250,-4,339,4,229,219,219,
+          226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-4,219,1,226,-5,339,
+          4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,-4,
+          219,1,226,-5,339,4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,
+          219,226,339,-4,219,1,226,-5,339,4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,229,219,219,226,
+          -3,339,5,229,219,219,226,339,-4,219,1,226,-5,339,4,229,219,219,226,-6,339,4,229,219,219,226,-4,339,4,
+          229,219,219,226,-3,339,5,229,219,219,226,339,-4,219,1,286,-5,287,4,289,219,219,226,-6,339,4,229,219,
+          219,226,-4,339,4,229,219,219,226,-3,339,5,229,219,219,226,339,
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tl_grasslands1","path":"tilesets/tl_grasslands1/tl_grasslands1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"$GMRTileLayer":"","%Name":"chao","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"chao","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":23,"SerialiseWidth":40,"TileCompressedData":[-920,277,],"TileDataFormat":1,},"tilesetId":{"name":"tl_grasslands1","path":"tilesets/tl_grasslands1/tl_grasslands1.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+>>>>>>> Stashed changes
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
   "name":"rm_boss2",
@@ -86,10 +114,17 @@
   "resourceType":"GMRoom",
   "resourceVersion":"2.0",
   "roomSettings":{
+<<<<<<< Updated upstream
     "Height":504,
     "inheritRoomSettings":false,
     "persistent":true,
     "Width":896,
+=======
+    "Height":360,
+    "inheritRoomSettings":false,
+    "persistent":false,
+    "Width":640,
+>>>>>>> Stashed changes
   },
   "sequenceId":null,
   "views":[

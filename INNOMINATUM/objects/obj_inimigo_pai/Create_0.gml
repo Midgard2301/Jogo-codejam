@@ -1,7 +1,6 @@
 // iniciando variáveis 
 xscale=1;
 
-
 // estado de todos os inimigos 
 
 estado_idle=new estado();

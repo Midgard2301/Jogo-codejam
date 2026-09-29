@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_arvore",
+  "%Name":"obj_cacto",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_arvore",
+  "name":"obj_cacto",
   "overriddenProperties":[],
   "parent":{
     "name":"Cenário",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_arvore2",
-    "path":"sprites/spr_arvore2/spr_arvore2.yy",
+    "name":"spr_cacto",
+    "path":"sprites/spr_cacto/spr_cacto.yy",
   },
   "spriteMaskId":null,
   "visible":true,

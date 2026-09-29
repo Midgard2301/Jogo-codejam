@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Font","folderPath":"folders/Font.yy","name":"Font","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -31,6 +31,7 @@
     {"$GMFolder":"","%Name":"Segundo_boss","folderPath":"folders/Sprites/Bosses/Segundo_boss.yy","name":"Segundo_boss","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"idle","folderPath":"folders/Sprites/Bosses/Segundo_boss/idle.yy","name":"idle","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Dano","folderPath":"folders/Sprites/Dano.yy","name":"Dano","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Fundo","folderPath":"folders/Sprites/Fundo.yy","name":"Fundo","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Inimigos","folderPath":"folders/Sprites/Inimigos.yy","name":"Inimigos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Slime","folderPath":"folders/Sprites/Inimigos/Slime.yy","name":"Slime","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Level","folderPath":"folders/Sprites/Level.yy","name":"Level","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -41,8 +42,10 @@
     {"$GMFolder":"","%Name":"hit","folderPath":"folders/Sprites/Player/hit.yy","name":"hit","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"idle","folderPath":"folders/Sprites/Player/idle.yy","name":"idle","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"walk","folderPath":"folders/Sprites/Player/walk.yy","name":"walk","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Teste","folderPath":"folders/Sprites/Teste.yy","name":"Teste","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tiles","folderPath":"folders/Sprites/Tiles.yy","name":"Tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tiro","folderPath":"folders/Sprites/Tiro.yy","name":"Tiro","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"transicao","folderPath":"folders/Sprites/transicao.yy","name":"transicao","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
@@ -55,27 +58,47 @@
   "name":"INNOMINATUM",
   "resources":[
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
-    {"id":{"name":"obj_arvore","path":"objects/obj_arvore/obj_arvore.yy",},},
+    {"id":{"name":"obj_arvore_1","path":"objects/obj_arvore_1/obj_arvore_1.yy",},},
+    {"id":{"name":"obj_arvore_pe","path":"objects/obj_arvore_pe/obj_arvore_pe.yy",},},
     {"id":{"name":"obj_boss","path":"objects/obj_boss/obj_boss.yy",},},
     {"id":{"name":"obj_boss2","path":"objects/obj_boss2/obj_boss2.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_cacto","path":"objects/obj_cacto/obj_cacto.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_colisor","path":"objects/obj_colisor/obj_colisor.yy",},},
     {"id":{"name":"obj_controlador","path":"objects/obj_controlador/obj_controlador.yy",},},
     {"id":{"name":"obj_dano_boss","path":"objects/obj_dano_boss/obj_dano_boss.yy",},},
     {"id":{"name":"obj_dano","path":"objects/obj_dano/obj_dano.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"obj_game_maneger","path":"objects/obj_game_maneger/obj_game_maneger.yy",},},
+=======
+    {"id":{"name":"obj_game_controller","path":"objects/obj_game_controller/obj_game_controller.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_inimigo_pai","path":"objects/obj_inimigo_pai/obj_inimigo_pai.yy",},},
     {"id":{"name":"obj_inimigo_slime","path":"objects/obj_inimigo_slime/obj_inimigo_slime.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+<<<<<<< Updated upstream
     {"id":{"name":"obj_player1","path":"objects/obj_player1/obj_player1.yy",},},
     {"id":{"name":"obj_porta","path":"objects/obj_porta/obj_porta.yy",},},
+=======
+    {"id":{"name":"obj_save_load","path":"objects/obj_save_load/obj_save_load.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},},
     {"id":{"name":"obj_tiro","path":"objects/obj_tiro/obj_tiro.yy",},},
     {"id":{"name":"rm_boss","path":"rooms/rm_boss/rm_boss.yy",},},
     {"id":{"name":"rm_boss2","path":"rooms/rm_boss2/rm_boss2.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"save_functions","path":"scripts/save_functions/save_functions.yy",},},
     {"id":{"name":"state_machine","path":"scripts/state_machine/state_machine.yy",},},
+    {"id":{"name":"spr_arvore_g","path":"sprites/spr_arvore_g/spr_arvore_g.yy",},},
+    {"id":{"name":"spr_arvore_p","path":"sprites/spr_arvore_p/spr_arvore_p.yy",},},
     {"id":{"name":"spr_arvore1","path":"sprites/spr_arvore1/spr_arvore1.yy",},},
     {"id":{"name":"spr_arvore2","path":"sprites/spr_arvore2/spr_arvore2.yy",},},
     {"id":{"name":"spr_boss_attack_front","path":"sprites/spr_boss_attack_front/spr_boss_attack_front.yy",},},
@@ -85,8 +108,13 @@
     {"id":{"name":"spr_boss_idle_front","path":"sprites/spr_boss_idle_front/spr_boss_idle_front.yy",},},
     {"id":{"name":"spr_boss_walk_front","path":"sprites/spr_boss_walk_front/spr_boss_walk_front.yy",},},
     {"id":{"name":"spr_boss2_idle","path":"sprites/spr_boss2_idle/spr_boss2_idle.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"spr_cacto","path":"sprites/spr_cacto/spr_cacto.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_colisor","path":"sprites/spr_colisor/spr_colisor.yy",},},
     {"id":{"name":"spr_dano","path":"sprites/spr_dano/spr_dano.yy",},},
+    {"id":{"name":"spr_fundo","path":"sprites/spr_fundo/spr_fundo.yy",},},
     {"id":{"name":"spr_plater_right_hit","path":"sprites/spr_plater_right_hit/spr_plater_right_hit.yy",},},
     {"id":{"name":"spr_player_attack_back","path":"sprites/spr_player_attack_back/spr_player_attack_back.yy",},},
     {"id":{"name":"spr_player_attack_front","path":"sprites/spr_player_attack_front/spr_player_attack_front.yy",},},
@@ -108,13 +136,19 @@
     {"id":{"name":"spr_slime_idle","path":"sprites/spr_slime_idle/spr_slime_idle.yy",},},
     {"id":{"name":"spr_slime_walk","path":"sprites/spr_slime_walk/spr_slime_walk.yy",},},
     {"id":{"name":"spr_tiro2","path":"sprites/spr_tiro2/spr_tiro2.yy",},},
+    {"id":{"name":"spr_transicao","path":"sprites/spr_transicao/spr_transicao.yy",},},
+    {"id":{"name":"Sprite40","path":"sprites/Sprite40/Sprite40.yy",},},
+    {"id":{"name":"Sprite41","path":"sprites/Sprite41/Sprite41.yy",},},
+    {"id":{"name":"Sprite42","path":"sprites/Sprite42/Sprite42.yy",},},
     {"id":{"name":"sqr_tileset","path":"sprites/sqr_tileset/sqr_tileset.yy",},},
+    {"id":{"name":"TileSet3","path":"tilesets/TileSet3/TileSet3.yy",},},
     {"id":{"name":"tl_grasslands","path":"tilesets/tl_grasslands/tl_grasslands.yy",},},
     {"id":{"name":"tl_grasslands1","path":"tilesets/tl_grasslands1/tl_grasslands1.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"rm_jogo","path":"rooms/rm_jogo/rm_jogo.yy",},},
     {"roomId":{"name":"rm_boss","path":"rooms/rm_boss/rm_boss.yy",},},

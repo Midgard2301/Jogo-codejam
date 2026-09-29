@@ -249,6 +249,7 @@ estado_hunt.roda= function(){
 			{
 				//Checando a distância desse slime
 				var _dist =point_distance(x,y,_slime.x,_slime.y);
+				
 				if(_dist<=100)
 				{
 				// Mudando o estado do inimigo para perseguir o player
@@ -263,4 +264,6 @@ estado_hunt.roda= function(){
 		}
 	}
 	}
+	
 #endregion
+

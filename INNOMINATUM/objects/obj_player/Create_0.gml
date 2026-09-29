@@ -12,6 +12,13 @@ meu_dano=noone;
 vida_inimigo=noone;
 
 
+if (instance_number(obj_player) > 1) {
+    instance_destroy();
+    exit;
+}
+
+
+
 #region // iniciando estados
 //iniciando primeiro estado 
 estado_idle= new estado();
@@ -234,6 +241,7 @@ estado_tiro.roda=function()
 #region //esado_death
 estado_death.inicia=function()
 {
+	
 	//definindo a sprite
 	sprite_index=spr_player_death;
 	
@@ -243,14 +251,22 @@ estado_death.inicia=function()
 
 estado_death.roda=function()
 {
+	
 	if(image_index>=image_number-.5)
 	{
 		vida_atual = 2;
 		
 		room_goto(global.sala_salva);
 	}
+	
+
+	with(obj_game_controller)
+		{
+			global.game_over=true;
+		}
 
 }
+
 #endregion
 
 #region // iniciando variáveis 
@@ -283,6 +299,9 @@ dir =0;
 global.vida_atual = 2;
 
 #endregion
+
+
+
 
 //inicia minha maquina de estados 
 inicia_estado(estado_idle);

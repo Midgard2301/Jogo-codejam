@@ -6,6 +6,12 @@ right	=keyboard_check(vk_right) or keyboard_check(ord("D"));
 attack  =keyboard_check_pressed(vk_space) or keyboard_check(ord("J"));
 tiro	=keyboard_check(vk_tab)or keyboard_check(ord("L"));
 
+
+
+if (vida > 0) {
+    global.safe_player_x = x;
+    global.safe_player_y = y;
+}
 //ajustando minha profundidade 
 depth=-y;
 
@@ -13,6 +19,7 @@ depth=-y;
 
 roda_estado();
 
+<<<<<<< Updated upstream
 
 
 if (global.vida_atual <= 0) {
@@ -22,3 +29,5 @@ if (global.vida_atual <= 0) {
     //recarrear sala
     room_goto(global.sala_salva);
 }
+=======
+>>>>>>> Stashed changes
